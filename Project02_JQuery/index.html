@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>평택대학교</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon.png">
+    <link rel="stylesheet" href="./mainCss/weather-icons.min.css">
+    <link rel="stylesheet" href="./mainCss/style.css">
+    <script src="https://kit.fontawesome.com/b51af6ee40.js" crossorigin="anonymous"></script>
+    <script src="./js/lib/jquery-1.7.2.min.js"></script>
+    <script src="./js/lib/jquery.easing.1.3.min.js"></script>
+
+
+    <script src="./js/header/script_header.js"></script>
+    <script src="./js/quick/script_quick.js"></script>
+    <script src="js/popup/popup.js"></script>
+    <script src="./js/weather.js"></script>
+    <script src="./js/section01/script_section1.js"></script>
+    <script src="./js/section03/script_section3.js"></script>
+    <script src="./js/section04/script_section4.js"></script>
+    <script src="./js/section05/script_section5.js"></script>
+    <script src="./js/section06/script_section6.js"></script>
+    <script src="./js/footer/footer.js"></script>
+
+
+    <script>
+        //<!--
+        //매개변수(파라미터): 함수의 정의에서 전달받은 인수를 함수 내부로 전달하기 위해 사용하는 변수
+        function setCookie(name, value, expiredays) { //파라미터 : name:이름,value:값,expiredays:유효기간. 쿠키생성
+
+            var todayDate = new Date(); //현재의 날짜와 시간을 새로운 new객체를 생성하여 변수 에 담아 
+
+            todayDate.setDate(todayDate.getDate() + expiredays);
+
+            document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toUTCString() + ";"
+
+        }
+
+        //닫기버튼 클릭하면 쿠키(cookie)가 생성되며 닫힘. 쿠키가 있으면 웹사이트에서 사용자의 방문에 관한 정보를 기억
+        function closeWin() { //닫기버튼에서 호출됨.
+            if (document.notice_form.chkbox.checked) {  //체크박스에 체크를 한다면
+                setCookie("popWrap", "done", 1); //name:이름,value:값(완료),expiredays:유효기간. 하룻동안 공지창 열지 않음
+            }
+            // document.all['popWrap'].style.visibility = "hidden";
+            document.getElementById('popWrap').style.display = "none";
+        }
+    </script>
+    <style>
+        @keyframes bbg {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 1500px;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div class="pop" id="popWrap">
+        <a href="#none"><img src="./img/popupImg01.png" width="403" height="325" alt="팝업1"></a>
+        <a href="#none"><img src="./img/popupImg02.png" width="403" height="325" alt="팝업1"></a>
+        <a href="#none"><img src="./img/popupImg03.png" width="403" height="325" alt="팝업1"></a>
+        <form name="notice_form">
+            <p>
+                <input type="checkbox" name="chkbox" value="checkbox">
+                <span class="inputText">오늘 하루 열지않기</span>
+                <a href="javascript:closeWin();"><B class="close_btn"><i class="fa-solid fa-xmark"></i></B></a>
+            </p>
+        </form>
+    </div>
+
+
+
+    <div id="top_btn">
+        <ul class="quick">
+            <li>
+                    Quick Menu
+                <a href="#none">
+                    <div class="quick_box">
+
+                        <img src="./img/quickMenu01.png" width="68" height="68" alt="">
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#none">
+                    <div class="quick_box">
+                        <img src="./img/quickMenu02.png" width="68" height="68" alt="">
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="#none">
+                    <div class="quick_box">
+                        <img src="./img/quickMenu03.png" width="68" height="68" alt="">
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="#none">
+                    <div class="quick_box">
+                        <img src="./img/quickMenu04.png" width="68" height="68" alt="">
+                    </div>
+                </a>
+            </li>
+
+            <li class="quick_top">
+                <a href="#">
+                    <img src="./img/top_btn.png" width="80" height="65" alt="top_btn">
+                </a>
+            </li>
+        </ul>
+    </div>
+    <header>
+
+        <div id="main_cont1">
+
+            <div id="headerTap">
+                <div id="headerTap_Wrap">
+                    <div id="headerTap_lang">
+                        <span>Language</span>
+                        <ul class="selectBox">
+                            <li class="option"> <a href="#none">언어 선택
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </a>
+                                <ul>
+                                    <li><a href="#none">› 베트남어</a></li>
+                                    <li><a href="#none">› 영어</a></li>
+                                    <li><a href="#none">› 중국어(간체)</a></li>
+                                    <li><a href="#none">› 중국어(번체)</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+
+
+                    <div id="headerTap_Wrap_right">
+                        <ul>
+                            <li class="cicon"></li>
+                            <li class="ctemp">현재온도 : </li>
+                            <li><a href="./login.html">로그인</a></li>
+                            <li><a href="./membership.html">회원가입</a></li>
+                            <li><a href="#none">홈</a></li>
+                            <li><a href="#none">포털사이트</a></li>
+                            <li><a href="#none">개인이력시스템</a></li>
+                        </ul>
+
+                        <ul>
+                            <li><a href="#none">팝업존
+                                    <img class="btn_arrow01" width="16" height="16" src="./img/arrowDown01.png" alt="">
+                                </a></li>
+                        </ul>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div id="main_cont2">
+            <div id="nav_fix">
+                <nav id="nav">
+                    <h1>평택대학교</h1>
+
+                    <div id="pageLogo">
+                        <a href="./index.html">
+                            <img src="./img/ptu_logo.png" alt="logo">
+                        </a>
+                    </div>
+
+
+
+                    <div id="navMenu">
+                        <ul>
+                            <li><a href="./index_sub01.html">대학안내</a>
+                                <div class="sub1">
+                                    <div class="sub_contents">
+                                        <div class="brand_Wrap">
+                                            <div class="brand">
+                                                <h3>대학안내</h3>
+                                                <span>PYEONGTAEK UNIVERSITY</span>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="./index_sub01.html">총장실</a></dt>
+                                                    <dd><a href="#none">총장 인사말</a></dd>
+                                                    <dd><a href="#none">총장 프로필</a></dd>
+                                                </dl>
+                                            </li>
+
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">대학표상</a></dt>
+                                                    <dd><a href="#none">대학설립정신</a></dd>
+                                                    <dd><a href="#none">대학로고설명</a></dd>
+                                                    <dd><a href="#none">교가</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">대학역사</a></dt>
+                                                    <dd><a href="#none">대학약사</a></dd>
+                                                    <dd><a href="#none">대학연혁</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">대학기구</a></dt>
+                                                    <dd><a href="#none">조직도</a></dd>
+                                                    <dd><a href="#none">대학본부</a></dd>
+                                                    <dd><a href="#none">직속기관</a></dd>
+                                                    <dd><a href="#none">부속기관</a></dd>
+                                                    <dd><a href="#none">부설기관</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">국제교류</a></dt>
+                                                    <dd><a href="#none">국제교류협력원 사이트로 이동합니다.
+                                                            <img src="./img/headerSlideImg.png" width="10" height="10"
+                                                                alt="">
+                                                        </a>
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="./index_sub02.html">캠퍼스안내</a></dt>
+                                                    <dd><a href="#none">교내연락처</a></dd>
+                                                    <dd><a href="#none">캠퍼스 맵</a></dd>
+                                                    <dd><a href="#none">교통편&약도</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">법인안내</a></dt>
+                                                    <dd><a href="#none">이사회임원</a></dd>
+                                                    <dd><a href="#none">이사회회의록</a></dd>
+                                                    <dd><a href="#none">연간 기부금 모금액 및 활용실적 명세서</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                            </li>
+
+                            <li><a href="#none">입학안내</a></li>
+
+                            <li><a href="#none">학과소개</a>
+                                <div class="sub2">
+                                    <div class="sub_contents">
+                                        <div class="brand_Wrap">
+                                            <div class="brand">
+                                                <h3>학과소개</h3>
+                                                <span>PYEONGTAEK UNIVERSITY</span>
+                                            </div>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">IT공과대학</a></dt>
+                                                    <dd><a href="#none">스마트모빌리티학과</a></dd>
+                                                    <dd><a href="#none">정보통신학과</a></dd>
+                                                    <dd><a href="#none">데이터정보학과</a></dd>
+                                                    <dd><a href="#none">ICT융합학부미디어디자인전공</a></dd>
+                                                    <dd><a href="#none">ICT융합학부스마트콘텐츠전공</a></dd>
+                                                    <dd><a href="#none">ICT융합학부ICT환경융합전공</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">국제물류대학</a></dt>
+                                                    <dd><a href="#none">국제물류학과</a></dd>
+                                                    <dd><a href="#none">국제무역행정학과</a></dd>
+                                                    <dd><a href="#none">국제도시부동산학과</a></dd>
+                                                    <dd><a href="#none">경영학과</a></dd>
+                                                    <dd><a href="#none">국제지역학부 미국학전공</a></dd>
+                                                    <dd><a href="#none">국제지역학부 중국학전공</a></dd>
+                                                    <dd><a href="#none">국제지역학부 일본학전공</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">사회서비스대학</a></dt>
+                                                    <dd><a href="#none">사회복지학과</a></dd>
+                                                    <dd><a href="#none">재활상담학과</a></dd>
+                                                    <dd><a href="#none">아동청소년교육상담학과</a></dd>
+                                                    <dd><a href="#none">간호학과</a></dd>
+                                                    <dd><a href="#none">신학과</a></dd>
+                                                    <dd><a href="#none">광고홍보학과</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">문화예술대학</a></dt>
+                                                    <dd><a href="#none">커뮤니케이션디자인학과</a></dd>
+                                                    <dd><a href="#none">패션디자인및브랜딩학과</a></dd>
+                                                    <dd><a href="#none">공연영상콘텐츠학과</a></dd>
+                                                    <dd><a href="#none">실용음악학과</a></dd>
+                                                    <dd><a href="#none">음악학과</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">피어선칼리지</a></dt>
+                                                    <dd><a href="#none">피어선칼리지</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">피어선교양전공</a></dt>
+                                                    <dd><a href="#none">ICT융합피어선교양전공</a></dd>
+                                                    <dd><a href="#none">인문학적인사고와 Design Thinking <br>피어선교양전공</a></dd>
+                                                    <dd><a href="#none">통일학피어선교양전공</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">융복합전공</a></dt>
+                                                    <dd><a href="#none">전공안내</a></dd>
+                                                    <dd><a href="#none">글로벌리더스융복합전공</a></dd>
+                                                    <dd><a href="#none">다문화복지융복합전공</a></dd>
+                                                    <dd><a href="#none">다문화한국어교육 융복합전공</a></dd>
+                                                    <dd><a href="#none">스토리텔링융복합전공</a></dd>
+                                                    <dd><a href="#none">창업융복합전공</a></dd>
+                                                    <dd><a href="#none">초협업융복합전공</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li><a href="#none">대학원</a></li>
+
+                            <li><a href="#none">대학생활</a>
+                                <div class="sub3">
+                                    <div class="sub_contents">
+                                        <div class="brand_Wrap">
+                                            <div class="brand">
+                                                <h3>대학생활</h3>
+                                                <span>PYEONGTAEK UNIVERSITY</span>
+                                            </div>
+                                        </div>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">학사일정</a></dt>
+                                                    <dd><a href="#none">학사일정</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">학생/장학</a></dt>
+                                                    <dd><a href="#none">교내장학금</a></dd>
+                                                    <dd><a href="#none">외부/국가장학금</a></dd>
+                                                    <dd><a href="#none">학생활동</a></dd>
+                                                    <dd><a href="#none">학자금대출</a></dd>
+                                                    <dd><a href="#none">학교생활상식</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">교무/수업</a></dt>
+                                                    <dd><a href="#none">수강신청안내</a></dd>
+                                                    <dd><a href="#none">수업</a></dd>
+                                                    <dd><a href="#none">특별교육과정</a></dd>
+                                                    <dd><a href="#none">등록금 납부안내</a></dd>
+                                                    <dd><a href="#none">PEP</a></dd>
+                                                    <dd><a href="#none">경인지역대학학점교류</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">성적/학적</a></dt>
+                                                    <dd><a href="#none">졸업학점안내</a></dd>
+                                                    <dd><a href="#none">재수강제도안내</a></dd>
+                                                    <dd><a href="#none">학점포기제도안내</a></dd>
+                                                    <dd><a href="#none">학과(전공)변경제도</a></dd>
+                                                    <dd><a href="#none">전공선택제도안내</a></dd>
+                                                    <dd><a href="#none">학적사항</a></dd>
+                                                    <dd><a href="#none">재입학</a></dd>
+                                                    <dd><a href="#none">조기졸업</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">우일신</a></dt>
+                                                    <dd>
+                                                        <a href="#none">핵심역량 통합관리시스템
+                                                            <img src="./img/headerSlideImg.png" width="10" height="10"
+                                                                alt="">
+                                                        </a>
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">예비군안내</a></dt>
+                                                    <dd><a href="#none">직장예비군편성안내</a></dd>
+                                                    <dd><a href="#none">병사안내</a></dd>
+                                                    <dd><a href="#none">병역특례</a></dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">학군단</a></dt>
+                                                    <dd>
+                                                        <a href="#none">학군단 사이트로 이동합니다.
+                                                            <img src="./img/headerSlideImg.png" width="10" height="10"
+                                                                alt="">
+                                                        </a>
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <dl>
+                                                    <dt class="subTitle"><a href="#none">장애학생지원센터</a></dt>
+                                                    <dd>
+                                                        <a href="#none">장애학생지원센터로이동합니다.
+                                                            <img src="./img/headerSlideImg.png" width="10" height="10"
+                                                                alt="">
+                                                        </a>
+                                                    </dd>
+                                                </dl>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li><a href="#none">평택대광장</a></li>
+
+                            <li><a href="#none"><img src="./img/header_sitemap.png" width="35" height="27" alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+                <div id="contents"></div>
+            </div>
+
+            <!-- 배너 이벤트 시작 -->
+            <div id="bannerWrap" class="cf">
+                <div id="banner">
+                    <div id="bannerText_wrap" class="fl">
+                        <ul class="bannerText fl">
+                            <li>PYEONGTAEK UNIVERSITY</li>
+                            <li>We are opening a new century with 111years of history</li>
+                        </ul>
+                        <h2 class="bannerText_h1 fl"><strong>111</strong>년의 역사로 <br> 또 다른 <strong>100년</strong>을 준비한다</h2>
+
+
+
+                        <ul class="bannerBtn01">
+                            <li class="banner_stop"><a href="#none"><img src="./img/btn_stop.png" width="20" height="20"
+                                        alt="stop"></a>
+                            </li>
+                            <li class="banner_play"><a href="#none"><img src="./img/btn_play.png" width="20" height="20"
+                                        alt="play"></a></li>
+                        </ul>
+
+
+                        <ul class="slideNumber">
+                            <li class="bl">1/4</li>
+                            <li>2/4</li>
+                            <li>3/4</li>
+                            <li>4/4</li>
+
+                        </ul>
+
+                        <div id="bannerBottomWrap" class="fl">
+                            <div id="bannerBottom">
+                                <h2 class="fl">PTU NOTICE</h2>
+                                <ul class="bannerBottom_btn fl">
+                                    <li class="text_prev"><a href="#none"><img src="./img/arrow1.jpg" width="13"
+                                                height="13" alt=""></a></li>
+
+                                    <li class="text_stop"><a href="#none"><img src="./img/btn_stop.png" width="12"
+                                                height="12" alt=""></a></li>
+                                    <li class="text_play"><a href="#none"><img src="./img/btn_play.png" width="12"
+                                                height="12" alt=""></a></li>
+
+                                    <li class="text_next"><a href="#none"><img src="./img/arrow2.jpg" width="13"
+                                                height="13" alt=""></a></li>
+                                </ul>
+
+                                <div id="swiperWrap" class="fl">
+                                    <ul class="swiper">
+                                        <li><a href="#none"> <span>2023.04.13</span> <br> 2023년도 1학기 고양시 대학생 본인부담 등록금
+                                                지원사업 안내 </a></li>
+                                        <li><a href="#none"> <span>2023.04.13</span> <br> 2023년도 1학기 중간고사 성적평가 안내 </a>
+                                        </li>
+                                        <li><a href="#none"> <span>2023.04.13</span> <br> 2023년도 1학기 3차 국가 근로장학금 학생 신청기간
+                                                안내 </a></li>
+                                        <li><a href="#none"> <span>2023.04.13</span> <br> 2023년도 푸른등대 삼성기부장학사업 선발 안내</a>
+                                        </li>
+                                        <li><a href="#none"> <span>2023.04.13</span> <br> 2023년도 1학기 중간고사 성적평가 안내 </a>
+                                        </li>
+                                        <li><a href="#none"> <span>2023.04.18</span> <br> 2023년도 "경기청년 사다리 프로그램 사업"
+                                                참여자모집 안내 </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+                    <div id="slideBanner">
+                        <ul class="bannerImg_Wrap">
+                            <li class="bannerActive"><img src="./img/main02.jpg" width="1920" height="970" alt="">
+                            </li>
+                            <li class="bannerActive"><img src="./img/main03.jpg" width="1920" height="970" alt="">
+                            </li>
+                            <li class="bannerActive"><img src="./img/main04.jpg" width="1920" height="970" alt="">
+                            </li>
+                            <li class="bannerActive"><img src="./img/main01.jpg" width="1920" height="970" alt="">
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <section>
+        <div id="section01">
+            <div class="top_Notice">
+                <div class="noticeWrap">
+
+                    <h2 class="noticeWrap_PTU"><span>PTU</span> NOTICE</h2>
+                    <p class="fl">평택대학교의 새로운 소식들을 여러분들게 전달 드립니다.</p>
+                </div>
+
+                <div id="bottom_Notice">
+                    <div id="wrapTab">
+                        <div class="tabArea">
+                            <div id="tab_wrap">
+                                <ul class="tab">
+                                    <li class="on">
+                                        <a href="#!"><span>새소식</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><span>학사정보</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><span>교육정보</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><span>채용/초빙</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><span>언론속PTU</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><span>사업단 창업교육</span></a>
+                                    </li>
+                                </ul>
+
+                                <ul class="notice_menu2">
+                                    <li><a href="./index_sub03.html"><i class="fa-solid fa-plus"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="tabBox on">
+                                <div class="notice">
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <a href="#none">
+                                                    <h2 class="fl">19</h2>
+                                                    <p>Apr.</p>
+                                                    <span class="tab_title">2023학년도 1학기 교내 순환버스 임시 휴차 및 구간 통제 알림</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <a href="#none">
+                                                    <h2 class="fl">19</h2>
+                                                    <p>Apr.</p>
+                                                    <span class="tab_title">2023년도 영상정보처리기기(CCTV) 운영·관리 방침 변경 알림</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <a href="#none">
+                                                    <h2 class="fl">18</h2>
+                                                    <p>Apr.</p>
+                                                    <span class="tab_title">2023년 4월 살충 방역소독 일정 안내</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <ul>
+                                            <li>
+                                                <a href="#none">
+                                                    <h2 class="fl">18</h2>
+                                                    <p>Apr.</p>
+                                                    <span class="tab_title">학내 정보시스템 및 무선랜 중단
+                                                        안내[2023.4.23.(일)~4.24.(월)</span>
+                                                    <span class="tab_sub">
+                                                        1. 중단 사유: 클라우드 시스템 서버 패치 작업
+                                                        2. 중단 일시: 2023. 4. 23.(일) 22:00 ∼ 4. 24.(월) 04:00 (약 6시간)
+                                                        ※ 작업 상황에 따라 중단시간은 다소 변경될 수 있음</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabBox">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">13</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">2023학년도 1학기 중간고사 성적평가 안내</span>
+                                                <span class="tab_sub">
+                                                    1. 2023학년도 1학기 중간고사 성적평가 일정
+                                                    2. 2023학년도 1학기 성적 평가 방법</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">15</h2>
+                                                <p>Mar.</p>
+                                                <span class="tab_title">2023학년 평택대학교 비교과프로그램 통합가이드북</span>
+                                                <span class="tab_sub">
+                                                    첨부된 PDF파일을 참고하세요.
+                                                    교육혁신센터
+                                                    2023학년도_평택대학교_비교과프로그램_통합_가이드북.pdf</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">08</h2>
+                                                <p>Mar.</p>
+                                                <span class="tab_title">외래강사(교수)휴게실 이전 안내</span>
+                                                <span class="tab_sub">
+                                                    외래강사(교수)휴게실 이전에 따라 휴게 장소가 변경되었으니 아래 내용을 참고하시기 바랍니다.
+                                                    이전된 장소: 이공관 320호 → 정보과학관 316호
+                                                    ※ 이전된 외래강사휴게실</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">15</h2>
+                                                <p>Sep.</p>
+                                                <span class="tab_title">학사운영 안내</span>
+                                                <span class="tab_sub">
+                                                    학사운영안내를 첨부와 같이 안내 합니다.
+                                                    교무연구처 수업팀</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabBox">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">18</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">신교통 시스템분야 외부 전문가 초청 강연 안내(2차)</span>
+                                                <span class="tab_sub">
+                                                    1. 제 목 : 신교통 시스템 분야 외부 전문가 초청 강연 시리즈-Ⅱ
+                                                    2. 주 제 : 국내 트램 인프라 및 차량 연구개발 현황
+                                                    3. 강 연 자 : 한국철도기술연구원 이수형 박사
+                                                    4. 일 시 : 2023년 4월 21일 금요일 10:00 ~ 12:00
+                                                    5. 장 소 : 공학2호관 332호 다빈치홀
+                                                    6. 주 최 : 평택대학교 철도연구소, 스마트시티 & 친환경 운송시스템 특화센터
+                                                    7. 주 관 : 평택대학교 LINC3.0사업단 캡스톤디자인센터
+                                                    8. 기 타 : 별도 신청 없이 참석을 희망하는 학생 및 학교 관계자 누구나 청강 가능
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">17</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">2023학년도 2차 공자학원 중국어강좌 수강생 모집 안내</span>
+                                                <span class="tab_sub">
+                                                    1. 강의기간: 2023. 5. 2.(화) ~ 6. 17.(토)
+                                                    2. 접수기간: 2023. 4. 17.(월) ~ 4. 27.(목) *개설 확정 강좌는 추가접수 진행
+                                                    3. 강의과목: 수준별 중국어 회화반, HSK실전대비반
+                                                    4. 강좌특징
+                                                    - 우수한 강사진(중국어 교육 전공 원어민 및 한국인 구성)
+                                                    - 저렴한 수강료
+                                                    - 학사 일정에 맞춘 수업 운영(중간/기말고사 기간 중복 안됨)
+                                                    - 중국 파견 프로그램 참여 혜택(장학프로그램, 단기 캠프 등)
+                                                    5. 문의 및 접수: 042-821-5286 또는 www.cicnu.ac.kr
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">17</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">2023학년도 제4차 CNU 교수법 워크숍 실시 안내</span>
+                                                <span class="tab_sub">
+                                                    1. 주제: ChatGPT 사용법 및 활용법
+                                                    ※ Youtube 영상을 활용한 온라인 교수법 워크숍 실시
+                                                    (영상 시청 후 참여후기를 작성하여 제출할 시 교수법 워크숍 참여 실적으로 인정)
+                                                    2. 대상: 평택대학교 교수자
+                                                    3. 시청 및 참여후기 작성 기간: 2023. 4. 14.(금) ~ 4. 25.(화)
+                                                    4. 콘텐츠: 붙임 파일 참조
+                                                    5. 참여후기 작성: https://naver.me/IFF53HrU
+                                                    6. 참여특전: 교원 업적평가 및 교육·연구·학생지도비 지급 기준 중‘교육영역-교육혁신본부 교수지원 프로그램 이수 및
+                                                    적용’에 교수법 워크숍 1시간 참여 실적 인정
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">14</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">2023년도 대전인문학포럼(제182회) 개최 안내</span>
+                                                <span class="tab_sub">
+                                                    1. 행 사 명: 제182회 대전인문학포럼
+
+                                                    2. 주 제: 한류와 케이팝 팬덤: 소비자에서 활동가까지
+
+                                                    3. 연 사: 김정원(음악인류학자, 작가, 연세대학교 강사)
+
+                                                    4. 일 시: 2023.4.18.(화) 14시
+
+                                                    5. 장 소: 평택대학교 인문대학 문원강당(137호)
+
+                                                    6. 강연방법: 학내 대면 강연
+
+                                                    7. 주 최: 평택대학교 인문대학
+
+                                                    8. 후 원: 대전광역시, 평택대학교
+
+                                                    ※ 문의: 대전인문학포럼 사무실 (042-821-6955)
+
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabBox">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">20</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">예술대학 디자인창의학과 교육공무원(조교) 채용 안내</span>
+
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">20</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">2023년도 제1차 기금교원 공개채용 재공고</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">19</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">2023-2차 3단계 산학연협력 선도대학 육성사업단(LINC 3.0)
+                                                    행정직원(기간제계약직) 채용 안내</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">18</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">산학협력단 직원(변리사, 연구원) 채용 공고</span>
+                                                <span class="tab_sub">
+
+
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabBox">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">19</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">평택대 가족회사 교류회</span>
+                                                <span class="tab_sub">
+                                                    평택대학교 산학협력단과 LINC 3.0 사업단은 18일 라마다호텔에서 가족회사 교류회를 개최했다. 교류회에서는
+                                                    ㈜에너넷(대표 신승업), 마이크로닉시스템㈜(대표 김홍래, 김환배),
+                                                    ㈜씨더스농업회사법인(대표 조성환) 3개 기업이 평택대와
+                                                    가족회사 협약
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">18</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">[왜냐면=서성원 교수] 농림부 ‘저탄소 축산물 인증제’ 연구용역 4개월…답은 정해져
+                                                    있다? [2023.4.17.한겨레]</span>
+                                                <span class="tab_sub">
+                                                    최근 농림축산식품부는 ‘저탄소 축산물 인증 기준’을 마련했다. 한우 거세우를 키우는 농가가 기존 농림부 인증제 7종 가운데
+                                                    1개 이상을 취득하고 △탄소 배출량(70점) △저탄소 기술 적용 여부(20점) △기타 항목(10점) 등에서
+                                                    60점 이상을 획득하면.....
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">18</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">[풍경소리=강석구 교수] 글로컬대학시대의 지방대학의 운명 [2023.4.17.중도일보]
+                                                </span>
+                                                <span class="tab_sub">
+                                                    가끔 평화로운 대학 캠퍼스를 걷다 보면 새삼스레 대학의 낭만이 느껴지고 문득 예전 대학 시절의 소회가 밀려와 웃음 짓곤
+                                                    한다. 하지만 최근의 대학은 그저 웃음 지을 수밖에 없는 환경에 처해 있다. 20년 뒤 대학입학자원 이 심각한
+                                                    저출산(2021년 출산 26만 명) 문제로 인해 학령인구가 절반 가까이 감소하여 존폐 위기에 놓이는 대학이 지속적으로
+                                                    증가할 것으로......
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">17</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">평택대 배구부, 성균관대 잡고 '파죽의 2연승' [2023.4.16.중도일보]
+                                                </span>
+                                                <span class="tab_sub">
+                                                    대학배구 U-리그 개막전에서 승리를 따낸 평택대학교 배구부가 이번엔 홈 개막전에서 '강호' 성균관대를 잡아내며 파죽의
+                                                    2연승을......
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <div class="tabBox">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">10</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">[중소벤처기업부] 청년인턴 채용 공고 안내</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">07</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">[창업지원단] 창업이 궁금할 땐! 6차 B.O.S.S 특강 안내
+                                                    [2023.4.17.한겨레]
+                                                </span>
+                                                <span class="tab_sub">
+                                                    [평택대학교 창업지원단] 창업이 궁금할 땐! 6회차 B.O.S.S.특강
+                                                    6회차 B.O.S.S 특강 주인공은 'KCB특허법률사무소' 의 김창범 대표 변리사님입니다.
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">04</h2>
+                                                <p>Apr.</p>
+                                                <span class="tab_title">[창업지원단] 창업이 궁금할 땐 5차 B.O.S.S 특강 안내
+                                                    [2023.4.17.중도일보]
+                                                </span>
+                                                <span class="tab_sub">
+                                                    [평택대학교 창업지원단] 창업이 궁금할 땐! 5회차 B.O.S.S.특강
+                                                    5회차 B.O.S.S 특강 주인공은 'SAAP' 의 윤해강 대표님입니다.
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="#none">
+                                                <h2 class="fl">31</h2>
+                                                <p>Mar.</p>
+                                                <span class="tab_title">[지식재산]지식재산융합전공(연계전공) 온라인 설명회 안내 [2023.4.16.중도일보]
+                                                </span>
+                                                <span class="tab_sub">
+                                                    지식재산전문인력양성사업단에서는 지식재산융합전공을 연계전공으로 희망하는 재학생들을 대상으로 「2023학년도 1차
+                                                    지식재산융합전공 온라인 설명회」를 개최 하고자 하고자합니다. 학생들의 많은 참여 부탁드립니다.
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="popup_zone" class="fl">
+                        <div id="popText">
+                            <ul>
+                                <li><i class="fa-solid fa-arrow-right"></i></li>
+                                <li>POPUP ZONE</li>
+                            </ul>
+
+                            <ul>
+                                <li class="pop_prev"><a href="#none"><i class="fa-solid fa-chevron-left"></i></a></li>
+                                <li class="pop_stop"><a href="#none"><i class="fa-solid fa-pause"
+                                            ></i></a></li>
+                                <li class="pop_play"><a href="#none"><i class="fa-solid fa-play"
+                                           ></i></a></li>
+                                <li class="pop_next"><a href="#none"><i class="fa-solid fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div id="popImgWrap">
+                            <div id="popImg">
+                                <ul class="popSlide">
+                                    <li><a href="#none"><img src="./img/popImg1.jpg" alt="popImg1" width="350"
+                                                height="212"></a></li>
+                                    <li><a href="#none"><img src="./img/popImg2.jpg" alt="popImg2" width="350"
+                                                height="212"></a></li>
+                                    <li><a href="#none"><img src="./img/popImg3.jpg" alt="popImg3" width="350"
+                                                height="212"></a></li>
+                                    <li><a href="#none"><img src="./img/popImg4.jpg" alt="popImg4" width="350"
+                                                height="212"></a></li>
+                                </ul>
+
+                                <ul class="pop_shadow">
+                                    <li></li>
+                                </ul>
+                                <ul class="pop_num">
+                                    <li class="bl"> <span>1</span>/4</li>
+                                    <li> <span>2</span>/4</li>
+                                    <li> <span>3</span>/4</li>
+                                    <li> <span>4</span>/4</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        
+
+        <div id="section02">
+            <!-- 너비 100%,     높이 240 -->
+            <div id="section_empty">
+                <!-- 높이 40 공백 -->
+
+            </div>
+            <div id="menuBar_Wrap">
+                <!-- 너비 100%,      배경색 그라디언트,      높이 200,       z-index 20 -->
+                <div id="menuBar">
+                    <!-- 너비 1440px       margin: 0 auto        높이 200      백그라운드 이미지 스터디-->
+
+                    <ul class="section2Img_Wrap">
+                        <li class="study"><img src="./img/study_ico.png" alt="study_ico"></li>
+                        <li class="section2_quickBtn"><a href="#none"><img src="./img/quickBtn.png" width="161"
+                                    height="161" alt=""></a></li>
+                    </ul>
+
+                    <ul class="section2_portal">
+                        <li><a href="#none"><img src="./img/portal01.png" width="38" alt="38">
+                                <span>PTU포털</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal02.png" width="28" alt="36">
+                                <span>도서관</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal03.png" width="25" alt="38">
+                                <span>코러스시스템</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal04.png" width="34" alt="36">
+                                <span>발전기금</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal05.png" width="41" alt="31">
+                                <span>인재개발원</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal06.png" width="34" alt="37">
+                                <span>인터넷증명</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal07.png" width="21" alt="32">
+                                <span>사이버투어</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal08.png" width="35" alt="35">
+                                <span>PTU <br> Webzine</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal09.png" width="35" alt="29">
+                                <span>국립대학 <br> 육성사업</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal10.png" width="38" alt="30">
+                                <span>DSC <br> 공유대학</span>
+                            </a></li>
+
+                        <li><a href="#none"><img src="./img/portal11.png" width="33" alt="30 ">
+                                <span>PTU포털</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="section03">
+            <!-- 너비 1440px    높이 590px -->
+            <div class="noticeWrap">
+                <!-- 너비 1440px  높이 110px-->
+
+                <h2 class="noticeWrap_PTU"><span>PTU</span> NEWS</h2>
+                <p class="fl">평택대학교의 새롭고 알찬 뉴스내용을 여러분께 전달합니다.</p>
+            </div>
+
+            <div id="section03_tabBox">
+                <!-- 너비 1440px  높이 470px -->
+                <div id="section03_tabLeft">
+                    <!-- 너비 130 -->
+                    <ul>
+                        <li class="section03_prev"><a href="#none"><i class="fa-solid fa-chevron-left"></i></a></li>
+                    </ul>
+                </div>
+
+                <div id="section03_Slidetab">
+
+                    <div class="slidetab fl">
+                        <div id="slideTab01">
+                            <!-- 너비 310px     높이 390px -->
+                            <a href="#none"><img src="./img/slideTeb_img01.jpg" width="307" height="210"
+                                    alt="slideTeb_img01">
+                                <p>화학과 양서영 학부생, 국제 유명 학술지 논문 게재</p>
+                                <span>‘ChemCatChem’에 제1저자로 논문 게재
+                                    대학원 진학 준비 위한 학부생 프로그램 참여해 성과 <br>
+                                    자연과학대학 화학과에 4학년에 재학 중인 양서영 학생(지도교수 손영구, 이충균)이 국제적인 유명 학술지 ‘ChemCatChem’에 제1저자로 논문을
+                                    게재했다.
+                                </span>
+                                <span>2023-04-11</span>
+                            </a>
+                        </div>
+
+                        <div id="slideTab02">
+                            <!-- 너비 310px     높이 390px -->
+                            <a href="#none"><img src="./img/slideTeb_img02.jpg" width="307" height="210"
+                                    alt="slideTeb_img01">
+                                <p>이진숙 총장, 한국대학교육협의회 부회장 취임</p>
+                                <span>이진숙 총장이 한국대학교육협의회 부회장에 취임했다. <br>
+                                    한국대학교육협의회(회장 장제국)는 4월 7일 오후 3시 30분, 서울 금천구 대교협 대회의실에서 제27대 회장단 취임식을 개최했다. </span>
+                                <span>2023-04-07</span>
+                            </a>
+                        </div>
+
+                        <div id="slideTab03">
+                            <!-- 너비 310px     높이 390px -->
+                            <a href="#none"><img src="./img/slideTeb_img03.jpg" width="307" height="210"
+                                    alt="slideTeb_img01">
+                                <p>배구부, 대학배구 U-리그 첫 승</p>
+                                <span>강호 한양대 격파, 4월 13일 홈 개막전 <br>
+                                    배구부(감독 : 이기범)가 대학배구 U-리그 개막전을 승리로 장식했다.
+                                    배구부는 4월 6일 열린 ‘2023년 KUSF 대학배구 U-리그’ 첫 번째 경기에서 한양대에 3-2로 승리했다. </span>
+                                <span>2023-04-07</span>
+                            </a>
+                        </div>
+
+                        <div id="slideTab04">
+                            <!-- 너비 310px     높이 390px -->
+                            <a href="#none"><img src="./img/slideTeb_img04.jpg" width="307" height="210"
+                                    alt="slideTeb_img01">
+                                <p>교육대학원 교육학과 유아교육전공 동문회, 장학기금 기부</p>
+                                <span>1천만원 전달, “학생들에게 조금이나마 도움이 되길” <br>
+                                    교육대학원 교육학과 유아교육전공 동문회(동문회장 한수연)가 장학기금을 기부했다.
+                                    교육대학원 교육학과 유아교육전공 한수연(교육연구소 연구교수) 동문회장 등은 4월 10일 오후 3시, 이진숙 총장을 만나 교육학과 장학기금 1천만원을
+                                    전달했다.
+                                </span>
+                                <span>2023-04-10</span>
+                            </a>
+                        </div>
+
+                        <div id="slideTab05">
+                            <!-- 너비 310px     높이 390px -->
+                            <a href="#none"><img src="./img/slideTeb_img05.jpg" width="307" height="210"
+                                    alt="slideTeb_img01">
+                                <p>창업보육센터, ‘지역기술 창업육성 지원사업’ 선정</p>
+                                <span>컨소시엄 구축해 지역 스타트업 육성 나서 <br>
+                                    평택대창업지원단(단장 김태중) 소속의 창업보육센터(BI, Business Incubator)가 지역기술 창업육성 지원사업에 선정돼 지역의 스타트업
+                                    육성에 적극 나선다.
+                                </span>
+                                <span>2023-04-10</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="tabcont">
+                        <!-- css에서 display:none -->
+                        <div class="tab_content">
+                            <ul class="cf">
+                                <li id="design1">
+                                    <div class="hover">
+                                        <a href="#none">
+                                            <h4>
+                                                <i class="fa-solid fa-magnifying-glass"></i> <br>
+                                                화학과 양서영 학부생, <br> 국제 유명 학술지 논문 게재
+                                            </h4>
+                                            <p>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                2023-04-11
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li id="design2">
+                                    <div class="hover">
+                                        <a href="#none">
+                                            <h4>
+                                                <i class="fa-solid fa-magnifying-glass"></i> <br>
+                                                이진숙 총장, 한국대학교육협의회 <br> 부회장 취임
+                                            </h4>
+                                            <p>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                2023-04-07
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li id="design3">
+                                    <div class="hover">
+                                        <a href="#none">
+                                            <h4>
+                                                <i class="fa-solid fa-magnifying-glass"></i> <br>
+                                                배구부, 대학배구 U-리그 첫 승
+                                            </h4>
+                                            <p>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                2023-04-07
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li id="design4" class="margin">
+                                    <div class="hover">
+                                        <a href="#none">
+                                            <h4>
+                                                <i class="fa-solid fa-magnifying-glass"></i> <br>
+                                                교육대학원 교육학과 유아교육전공 <br> 동문회, 장학기금 기부
+                                            </h4>
+                                            <p>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                2023-04-10
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li id="design5">
+                                    <div class="hover">
+                                        <a href="#none">
+                                            <h4>
+                                                <i class="fa-solid fa-magnifying-glass"></i> <br>
+                                                창업보육센터, <br> ‘지역기술 창업육성 지원사업’ 선정
+                                            </h4>
+                                            <p>
+                                                <i class="fa-solid fa-calendar-days"></i>
+                                                2023-04-10
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="section03_tabRight">
+                    <!-- 너비 130 -->
+                    <ul>
+                        <li class="section03_stop"><a href="#none"><i class="fa-solid fa-pause"></i></a></li>
+                        <li class="section03_play"><a href="#none"><i class="fa-solid fa-play"></i></a></li>
+                    </ul>
+                    <ul>
+                        <li class="section03_next"><a href="#none"><i class="fa-solid fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="section04">
+            <div class="calendarWrap"> <!-- 너비 720px 높이 590px  fl-->
+                <table class="Calendar">
+                    <thead>
+                        <tr>
+                            <td class="calender_prev" onClick="prevCalendar();" style="cursor:pointer;"><i class="fa-solid fa-chevron-left"></i></td>
+                            <td colspan="5">
+                                <span id="calYear"></span>년
+                                <span id="calMonth"></span>월
+                            </td>
+                            <td class="calender_next" onClick="nextCalendar();" style="cursor:pointer;"><i class="fa-solid fa-chevron-right"></i></td>
+                        </tr>
+                        <tr onClick="buildCalendar();;" style="cursor:pointer;">
+                            <td>일</td>
+                            <td>월</td>
+                            <td>화</td>
+                            <td>수</td>
+                            <td>목</td>
+                            <td>금</td>
+                            <td>토</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="schedule"> <!-- 너비 720px 높이 590px  -->
+                <div id="scheduleBox"> <!-- 너비 580px  높이 420px -->
+                    <div class="schedule-title"> <!-- 너비 580px 높이 75px -->
+                        <ul class="schedule_text">
+                            <li>
+                                <h2>SCHEDULE</h2>
+                                <span></span>
+                            </li>
+                        </ul>
+
+                        <ul class="schedule_plus">
+                            <li><a href="#none"><i class="fa-solid fa-plus"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="schedule-box"> <!-- 너비 580px 높이 345px -->
+                        <ul>
+                            <li>
+                                <p>04.20(목) ~ 04.26(수)</p>
+                                <span>- 1학기 중간고사</span>
+                            </li>
+
+                            <li>
+                                <p>04.20(목) ~ 05.03(수)</p>
+                                <span>- 1학기 중간고사 성적입력기간</span>
+                            </li>
+
+                            <li>
+                                <p>04.26(수)</p>
+                                <span>- 1학기 수업주수 2/4선</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="section05">
+            <div id="section05_slideWrap"> <!-- 너비 1440px 높이 278px -->
+                <div id="section05_prevWrap"> <!-- 너비 100px 높이 278px -->
+                    <ul>
+                        <li class="section05_prev"><a href="#none"><i class="fa-solid fa-chevron-left"></i></a></li>
+                    </ul>
+                </div>
+
+                <div id="section05_slideImg"> <!-- 너비 1240px  높이 278px fl-->
+                    <ul>
+                        <li><a href="#none">
+                                <img src="./img/section5_img01.png" width="318" height="166" alt="section5_img01">
+                                <span class="imgNum"><strong>125</strong>억</span>
+                                <p class="tit">연간 총 장학금</p>
+                                <span class="txt">2020년도 정보공시 기준(기준연도 2019년도)</span>
+                            </a></li>
+
+                        <li><a href="#none">
+                                <img src="./img/section5_img02.png" width="332" height="218" alt="section5_img02">
+                                <span class="imgNum"><strong>67.6</strong>%</span>
+                                <p class="tit">졸업생 취업률</p>
+                                <span class="txt">2018년도 기준 67.6%</span>
+                            </a></li>
+
+                        <li><a href="#none">
+                                <img src="./img/section5_img03.png" width="318" height="166" alt="">
+                                <span class="imgNum"><strong>700</strong>명</span>
+                                <p class="tit">기숙사(청운재)수용가능 인원</p>
+                                <span class="txt">당구장 / 탁구장 / 세탁실 /북카페 <br> 2021년도 정보공시 기준(771명)</span>
+                            </a></li>
+
+                    </ul>
+                </div>
+
+                <div id="section05_nextWrap"> <!-- 너비 100px 높이 278px fr-->
+                    <ul>
+                        <li class="section05_next"><a href="#none"><i class="fa-solid fa-chevron-right"></i></a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div id="section06">
+            <div id="section06Wrap">
+               
+
+                <div id="st06_Main"> <!-- 너비 100% 높이 610px -->
+                    <div class="noticeWrap">
+
+                        <h2 class="noticeWrap_PTU"><span>PTU</span> SNS</h2>
+                        <p class="fl">소통하는 평택대학교, 여러분과 함께 만들어갑니다.</p>
+                    </div>
+
+                    <div class="snsMenu"> <!-- 너비 1440px --> <!-- 260px -->
+                        <div id="movie1">
+                            <iframe width="400" height="200" src="https://www.youtube.com/embed/5OHJ4V1C1XQ"
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+            
+                        <div id="movie2">
+                            <iframe width="400" height="200" src="https://www.youtube.com/embed/HvKqZAdmZYs"
+                                title="YouTube video player"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div id="scrollWrap" class="fl">
+                            <div id="scroll">
+                                <div class="css_img">
+                                    <div class="pc_img"><a href="#none"><img src="img/pc.png" width="400" height="200"
+                                                alt=""></a></div>
+                                    <div class="main_page">
+                                        <a href="#none"><img src="img/ptuSite.jpg" width="400" alt=""></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+
+
+
+                    <div class="snsLink"> <!-- 너비 1440px --> <!-- 80px -->
+                        <ul>
+                            <li class="instagram"><i class="fa-brands fa-instagram"></i>
+                                <a href="https://www.instagram.com/pyeongtaek.univ/" target="_blank">Instagram</a>
+                            </li>
+                            <li class="youtube"><i class="fa-brands fa-youtube"></i>
+                                <a href="https://www.youtube.com/@pubs8364" target="_blank">Youtube</a>
+                            </li>
+                            <li class="facebook"><i class="fa-brands fa-facebook"></i>
+                                <a href="https://www.facebook.com/ptuforyou/?locale=ko_KR" target="_blank">Facebook</a>
+                            </li>
+                            <li class="blog"><i class="fa-solid fa-blog"></i>
+                                <a href="https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=ptu1912&logNo=220787441325" target="_blank">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+       
+
+    </section>
+
+
+
+    <footer id="footer">
+        <div id="footer_top">
+            <!-- 너비 100%   높이 45px 보더 바텀: 1px -->
+            <div id="footer_topWrap">
+                <!-- 너비 1440px 높이 45px  -->
+                <div id="footMenu">
+                    <!-- 너비 740 높이 45px fl   -->
+                    <ul class="fMenu">
+                        <li><a href="#none">교내전화번호</a></li>
+                        <li><a href="#none">개인정보처리방침</a></li>
+                        <li><a href="#none">대학정보공시</a></li>
+                        <li><a href="#none">예결산공고</a></li>
+                        <li><a href="#none">입찰공고</a></li>
+                    </ul>
+                </div>
+
+                <div id="footer_select">
+                    <!-- 너비 700 높이 45px fr   -->
+                    <ul id="fSelect">
+                        <li class="fSelect_1dep01"><a href="#none">교내주요사이트
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </a>
+                            <ul class="fSelect_2dep">
+                                <li><a href="#none">자연사박물관 </a></li>
+                                <li><a href="#none">정보처 </a></li>
+                                <li><a href="#none">중앙기기센터 </a></li>
+                                <li><a href="#none">중앙도서관 </a></li>
+                                <li><a href="#none">중앙박물관 </a></li>
+                                <li><a href="#none">창업보육센터(국제) </a></li>
+                                <li><a href="#none">창업보육센터(서울) </a></li>
+                                <li><a href="#none">출판문화원 </a></li>
+                                <li><a href="#none">평생교육원 </a></li>
+                                <li><a href="#none">평화의전당 </a></li>
+                                <li><a href="#none">학군단(국제) </a></li>
+                                <li><a href="#none">학군단(서울) </a></li>
+                                <li><a href="#none">한방재료가공 학교기업 </a></li>
+                                <li><a href="#none">혜정박물관 </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="fSelect_1dep02"><a href="#none">평택대학교 관련기관
+                                <i class="fa-solid fa-chevron-up"></i>
+                            </a>
+                            <ul class="fSelect_2dep02">
+                                <li><a href="#none">평택대학교</a></li>
+                                <li><a href="#none">평택고등학교</a></li>
+                                <li><a href="#none">평택사이버대학교</a></li>
+                                <li><a href="#none">평택여자고등학교</a></li>
+                                <li><a href="#none">평택중학교</a></li>
+                                <li><a href="#none">평택여자중학교</a></li>
+                                <li><a href="#none">평택유치원</a></li>
+                                <li><a href="#none">평택초등학교</a></li>
+                                <li><a href="#none">평택의료원</a></li>
+                                <li><a href="#none">평택한약</a></li>
+                                <li><a href="#none">총동문회</a></li>
+                                <li><a href="#none">학교법인 경희학원</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="footer_bottom">
+            <!-- 너비 1440px 높이 135px -->
+            <div id="copyright_wrap">
+                <!-- 너비 1440px 높이 70px  -->
+
+                <div id="university">
+                    <!-- 너비 170px 높이 70px    float: left  -->
+                    <div id="universityWrap">
+                        <h2>평택대학교</h2>
+                        <p>PYEONGTAEK UNIVERSITY</p>
+                    </div>
+
+                </div>
+
+                <div id="copyright">
+                    <!-- 1270px 높이 70px       fr-->
+                    <ul class="copyrightWrap">
+                        <li>17869 경기도 평택시 서동대로 3825 TEL : 031-659-8114 FAX : 031-659-8011 <br>
+                            COPYRIGHT(C) PYEONGTAEK UNIVERSITY. ALL RIGHTS RESERVED.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div id="sns">
+                <!-- 너비 1440px 높이 65px  -->
+                <ul class="sns_wrap">
+                    <li><a href="#none"><i class="fa-solid fa-phone"></i></a></li>
+                    <li><a href="#none"><i class="fa-solid fa-envelope"></i></a></li>
+                    <li><a href="./index_sub02.html"><i class="fa-solid fa-location-dot"></i></a></li>
+                    <li><a href="#none"><i class="fa-regular fa-image"></i></a></li>
+                    <li><a href="#none"><i class="fa-solid fa-comment"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        cookiedata = document.cookie;   //document.cookie 프로퍼티를 이용하면 브라우저에서도 쿠키에 접근할 수 있음.
+
+        //indexOf() 메서드는 호출한 String 객체에서 주어진 값과 일치하는 첫 번째 인덱스를 반환
+        if (cookiedata.indexOf("popWrap=done") < 0) { //첫번째 순번이 0보다 작다면 보여지도록. 남은 시간이 하루가 지났다면 보여지도록   
+            // document.all['popWrap'].style.visibility = "visible";
+            document.getElementById('popWrap').style.display = "block";
+        }
+        else { //남은시간 1일이 지나지 않았다면 안보이도록
+            // document.all['popWrap'].style.visibility = "hidden";
+            document.getElementById('popWrap').style.display = "none";
+
+        }
+    </script>
+
+</body>
+
+</html>
