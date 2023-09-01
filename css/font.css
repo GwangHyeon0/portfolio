@@ -1,33 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Orbitron&display=swap');
-
+/* 날짜 텍스트 */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Roboto:ital@1&display=swap');
+/* font-family: 'Roboto', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Orbitron&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Gamja+Flower&family=Playfair+Display:wght@500&family=Single+Day&display=swap');
-/* font-family: 'Gamja Flower', cursive; */
 
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-/* font-family: 'Lobster', cursive; */
-
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-/* font-family: 'Abril Fatface', cursive; */
-
+/* 헤더 텍스트 */
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Lato&display=swap');
 /* font-family: 'Kanit', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
-/* font-family: 'Merriweather Sans', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
-/* font-family: 'Amaranth', sans-serif; */
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-/* font-family: 'Noto Sans', sans-serif; */
 
+/* 메인 슬로건 텍스트 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@900&display=swap');
 /* font-family: 'Noto Sans', sans-serif; */
 
+
+
+/* 포토 박스 안에 텍스트 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Sans:wght@900&display=swap');
 /* font-family: 'Noto Sans KR', sans-serif; */
 
+
+
+/* 섹션별 타이틀 */
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+/* font-family: 'Concert One', cursive; */
+
+
+/* edyia_aside h2 */
+@import url('https://fonts.googleapis.com/css2?family=Mogra&display=swap');
+/* font-family: 'Mogra', cursive; */
+
+
+/* 섹션마지막 타이틀 */
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+/* font-family: 'Rowdies', cursive; */

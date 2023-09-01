@@ -47,11 +47,11 @@ $(function () {
             scrollTop: $('#sectionWrap02').offset().top
         }, 800);
     });
-    $('#btn04').click(function () {
-        $('html,body').animate({
-            scrollTop: $('#sectionWrap03').offset().top
-        }, 800);
-    });
+    // $('#btn04').click(function () {
+    //     $('html,body').animate({
+    //         scrollTop: $('#sectionWrap03').offset().top
+    //     }, 800);
+    // });
     $('#btn05').click(function () {
         $('html,body').animate({
             scrollTop: $('#sectionWrap04').offset().top
@@ -195,6 +195,13 @@ $(function () {
         var jqueryNum = 81;
         var photoshopNum = 86;
         var illustratorNum = 74;
+        var figmaNum = 83;
+        var phpNum = 78;
+        var bootstrapNum = 75;
+        var githubNum = 82;
+        var reactNum = 70;
+        var firebaseNum = 71;
+
         var max = 100;
         var duration = 1500;
 
@@ -264,6 +271,72 @@ $(function () {
             'easing': 'easeInOutQuart',
             'progress': function (animation, progress, msRemaining) {
                 $('#illustrator_cnt').text(Math.round(illustratorNum * progress)); //반올림
+            }
+        });
+
+        //figma
+        $('#figma_bar').stop().animate({
+            'right': 100 - (figmaNum / max * 100) + '%',
+        }, {
+            'duration': duration,
+            'easing': 'easeInOutQuart',
+            'progress': function (animation, progress, msRemaining) {
+                $('#figma_cnt').text(Math.round(figmaNum * progress)); //반올림
+            }
+        });
+
+        //php
+        $('#php_bar').stop().animate({
+            'right': 100 - (phpNum / max * 100) + '%',
+        }, {
+            'duration': duration,
+            'easing': 'easeInOutQuart',
+            'progress': function (animation, progress, msRemaining) {
+                $('#php_cnt').text(Math.round(phpNum * progress)); //반올림
+            }
+        });
+
+        //Github
+        $('#github_bar').stop().animate({
+            'right': 100 - (githubNum / max * 100) + '%',
+        }, {
+            'duration': duration,
+            'easing': 'easeInOutQuart',
+            'progress': function (animation, progress, msRemaining) {
+                $('#github_cnt').text(Math.round(githubNum * progress)); //반올림
+            }
+        });
+
+        //Bootstrap
+        $('#bootstrap_bar').stop().animate({
+            'right': 100 - (bootstrapNum / max * 100) + '%',
+        }, {
+            'duration': duration,
+            'easing': 'easeInOutQuart',
+            'progress': function (animation, progress, msRemaining) {
+                $('#bootstrap_cnt').text(Math.round(bootstrapNum * progress)); //반올림
+            }
+        });
+
+        //React
+        $('#react_bar').stop().animate({
+            'right': 100 - (reactNum / max * 100) + '%',
+        }, {
+            'duration': duration,
+            'easing': 'easeInOutQuart',
+            'progress': function (animation, progress, msRemaining) {
+                $('#react_cnt').text(Math.round(reactNum * progress)); //반올림
+            }
+        });
+
+        //Firebase
+        $('#firebase_bar').stop().animate({
+            'right': 100 - (firebaseNum / max * 100) + '%',
+        }, {
+            'duration': duration,
+            'easing': 'easeInOutQuart',
+            'progress': function (animation, progress, msRemaining) {
+                $('#firebase_cnt').text(Math.round(firebaseNum * progress)); //반올림
             }
         });
 

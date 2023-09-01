@@ -1,27 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>복광현 포트폴리오</title>
+    <meta name="viewport" content="width=1440">
+    <title>광현 포트폴리오</title>
     <link rel="icon" type="image/png" sizes="16x16" href="./img/Logo.png">
     <link rel="stylesheet" href="./css/font.css">
-    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
 
     <script src="https://kit.fontawesome.com/b51af6ee40.js" crossorigin="anonymous"></script>
 
 
     <script src="./js/lib/jquery-2.1.4.min.js"></script>
+    <!-- <script src="./js/lib/jquery-1.7.2.min.js"></script> -->
     <script src="./js/lib/jquery.easing.1.3.min.js"></script>
     <script src="./js/lib/DB_springMove_fn.js"></script>
     <script src="./js/lib/jquery.flip.min.js"></script>
+    <script src="./js/lib/swiper.min.js"></script>
 
     <script src="./js/Main/mouseWheel.js"></script>
     <script src="./js/lib/jquery.Floater.js"></script>
     <script src="./js/Main/script.js"></script>
+
     <script src="js/Main/typed.js"></script>
+
+    <style>
+        @keyframes bg {
+            0% {
+                background-position-x: 0;
+            }
+
+            100% {
+                background-position-x: 5000px;
+            }
+        }
+    </style>
 
 </head>
 
@@ -74,14 +91,15 @@
                     <div class="headerTop">
                         <!-- 높이 100px -->
                         <div class="headerFix">
-                            <h1 class="logo fl"> <img src="./img/Logo.png" width="80" height="80" alt=""></h1>
+                            <h1 class="logo fl"><span>포트폴리오</span><img src="./img/Logo.png" width="80" height="80"
+                                    alt=""></h1>
                             <!-- 로고 -->
                             <ul class="section_nav">
-                                <li class="hidden"><a href="#sectionWrap01">Main</a></li>
+                                <li class="hidden"><a href="#none">Main</a></li>
                                 <li class="active"><a href="#sectionWrap01">Home</a></li>
                                 <li><a href="#sectionWrap02">Profile</a></li>
-                                <li><a href="#sectionWrap03">HTML/Css</a></li>
-                                <li><a href="#sectionWrap04">JQuery</a></li>
+                                <!-- <li><a href="#sectionWrap03">HTML/Css</a></li> -->
+                                <li><a href="#sectionWrap04">JQuery/Php</a></li>
                                 <li><a href="#sectionWrap05">Responsive</a></li>
                                 <li><a href="#sectionWrap06">Mobile</a></li>
                                 <li><a href="#sectionWrap07">Contact</a></li>
@@ -91,24 +109,26 @@
                     <div class="headerBot">
                         <!-- 높이 그외 -->
                         <div class="bot_left">
+                            <img class="home_proflie_Img1" src="./img/home_proflie_Img1.png" width="600"
+                                alt="proflie_Img1">
                             <div class="profile_title">
                                 <ul id="main_slogan">
                                     <li>
                                         <ul>
-                                            <li>No great</li>
-                                            <li>Man ever</li>
-                                            <li>Complains</li>
-                                            <li>Of want</li>
-                                            <li>Of opportunity</li>
-                                            <li class="last">기회는 만들어가는 것</li>
+                                            <li>Everywhere</li>
+                                            <li class="center">you</li>
+                                            <li>want to be</li>
+                                            <li class="last">당신이 원하는 어디에서든지</li>
                                         </ul>
                                     </li>
-
-
                                 </ul>
                             </div>
 
+                        </div>
 
+                        <div class="bot_right">
+                            <img class="home_proflie_Img2" src="./img/home_proflie_Img2.png" width="800"
+                                alt="proflie_Img2">
                         </div>
 
 
@@ -124,10 +144,10 @@
                     <!-- 마진 탑 100 -->
                     <div class="section02_left">
                         <div class="photo_wrap">
-                            <div class="photo_Top" title="클릭해주세요 !!">
-                                <div class="logo1 front"><img src="./img/profile_Img1.jpg" width="400" height="400"
+                            <div class="photo_Top">
+                                <div class="logo1 front"><img src="./img/profile_Img2.jpg" width="400" height="400"
                                         alt=""></div>
-                                <div class="logo2 back"><img src="./img/profile_Img2.jpg" width="400" height="400"
+                                <div class="logo2 back"><img src="./img/profile_Img01.jpg" width="400" height="413"
                                         alt=""></div>
                             </div>
                             <div class="move_line"></div>
@@ -149,7 +169,7 @@
                                 <legend>Privacy</legend>
                                 <div class="User">
                                     <span><strong>복광현</strong> <br> Bok Gwang Hyeon <br> <br> 2000.02.03
-                                        &nbsp; pyeong-taek</p>
+                                        &nbsp; pyeong-taek</span>
 
                                 </div>
 
@@ -166,7 +186,7 @@
                         </div>
 
 
-                        <fieldset id="fieldset">
+                        <fieldset class="fieldset">
                             <legend>About me</legend>
                             <p>학력</p>
                             <span><strong>2019.02</strong> &nbsp;동일공업고등학교 지형공간디자인과
@@ -181,20 +201,20 @@
 
                         </fieldset>
 
-                        <fieldset id="fieldset">
+                        <fieldset class="fieldset">
                             <legend>License</legend>
                             <p>교육이수</p>
-                            <span><strong>2023.07</strong> &nbsp; [스마트웹&콘텐츠개발] UI/UX디자인과 프론트엔드 개발자양성 수료</span>
+                            <span><strong>2023.07.20</strong> &nbsp; [스마트웹&콘텐츠개발] UI/UX디자인과 프론트엔드 개발자양성 수료</span>
                             <br>
                             <br>
                             <p>자격사항</p>
-                            <span>1종보통 면허</span> <br>
-                            <span>GTQ 포토샵 1급</span>
+                            <span>1종보통 면허 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            <span>&nbsp;&nbsp;&nbsp;&nbsp;GTQ 포토샵 1급</span>
                         </fieldset>
 
                         <div id="skills">
                             <div id="skills_wrap">
-                                <h2 class="en darkBlue">SKILLS</h2>
+                                <h3 class="en darkBlue">SKILLS</h3>
                                 <div id="progress_wrap">
                                     <ul>
                                         <li>
@@ -268,6 +288,79 @@
                                             </div>
                                         </li>
                                     </ul>
+                                    <ul>
+                                        <li>
+                                            <span class="en progress_tit">FIGMA</span>
+                                            <div class="en progress_cnt">
+                                                <span id="figma_cnt">0</span>
+                                                <span>/</span>
+                                                <span>100</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div id="figma_bar" class="bar"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="en progress_tit">PHP</span>
+                                            <div class="en progress_cnt">
+                                                <span id="php_cnt">0</span>
+                                                <span>/</span>
+                                                <span>100</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div id="php_bar" class="bar"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span class="en progress_tit">Github</span>
+                                            <div class="en progress_cnt">
+                                                <span id="github_cnt">0</span>
+                                                <span>/</span>
+                                                <span>100</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div id="github_bar" class="bar"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="en progress_tit">Bootstrap</span>
+                                            <div class="en progress_cnt">
+                                                <span id="bootstrap_cnt">0</span>
+                                                <span>/</span>
+                                                <span>100</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div id="bootstrap_bar" class="bar"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+                                    <ul>
+                                        <li>
+                                            <span class="en progress_tit">React</span>
+                                            <div class="en progress_cnt">
+                                                <span id="react_cnt">0</span>
+                                                <span>/</span>
+                                                <span>100</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div id="react_bar" class="bar"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <span class="en progress_tit">Firebase</span>
+                                            <div class="en progress_cnt">
+                                                <span id="firebase_cnt">0</span>
+                                                <span>/</span>
+                                                <span>100</span>
+                                            </div>
+                                            <div class="progress">
+                                                <div id="firebase_bar" class="bar"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -275,24 +368,984 @@
                 </div>
             </div>
 
-            <div id="sectionWrap03" class="scroll_menu">
+            <!-- <div id="sectionWrap03" class="scroll_menu">
+                <div id="section03Box" class="chart">
+                    <h2 class="sec_tit">
+                        <span>H</span>
+                        <span>T</span>
+                        <span>M</span>
+                        <span>L</span>
+                        <span>/</span>
+                        <span>C</span>
+                        <span>S</span>
+                        <span>S</span>
+                    </h2>
 
-            </div>
+                
+
+                    <div class="swiper-container swiper1">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="css_img">
+                                        <div class="apple_DeskTop">
+                                            <a href="#none"><img src="img/apple_DeskTop.png"
+                                                    width="600" height="476" alt="apple_DeskTop">
+                                            </a>
+                                        </div>
+
+                                        <div class="css_page">
+                                            <a href="./Project01_Css2/index.html" target="_blank">
+                                                
+                                                <img src="./img/T_World.jpg" width="560" alt="T_World">
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>T World</h2>
+                                        <br>
+                                        <p><em>July. 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;1 Days</p>
+                                        <br>
+                                        <p> Css만을 사용한 두 번째 사이트 입니다.<br>
+                                            기존의 만들었던 사이트의 부족함을 채우기 위해 노력하였습니다.<br>
+                                            제이쿼리를 사용하지 않고 탭메뉴와 슬라이드를 구현하였으며 <br>
+                                            실력을 쌓기에 좋은 프로젝트였습니다.
+                                        </p>
+                                        <br>
+                                        <p><strong>client : </strong>티월드 T World, brand official ,development</p>
+                                        <p><strong>concept : </strong>T World, Open and Friendly CGV, T world biz</p>
+                                        <p><strong>sitemap : </strong>index</p>
+
+
+                                        <br>
+                                        <ul class="slide_address">
+                                            <li><strong>address > </strong></li>
+                                            <li><a href="./Project01_Css2/index.html" target="_blank">Main</a></li>
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Explorer"><img src="./img/explorer.png"
+                                                        alt="explorer"></abbr>
+                                            </a>
+                                        </span>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="css_img">
+                                        <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                    width="600" height="476" alt=""></a></div>
+                                        <div class="css_page">
+                                            <a href="./Project01_Css/index.html" target="_blank">
+                                                
+                                                <img src="./img/Css_Img.jpeg" width="560" alt="edyia">
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>EDYIA COFFE</h2>
+                                    <br>
+                                    <p><em>Mar. 2023</em></p>
+                                    <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;28 Days</p>
+                                    <br>
+                                    <p>코딩을 배우고 난 후 처음 만들어본 사이트입니다.</p>
+                                    <p>디자인의 경우 기존 사이트를 참고하며 부분적으로 변경하여 진행하였습니다.</p>
+                                    <p>처음 접하기에 매우 어렵고 힘들었지만,</p>
+                                    <p>저한테는 매우 뜻 깊은 경험이었던 것 같습니다.</p>
+                                    <br>
+                                    <p><strong>client : </strong>이디야 커피 EDIYA COFFE, brand official, development</p>
+                                    <p><strong>concept : </strong>이디야커피, 대한민국을 대표하는 토종 커피브랜드</p>
+                                    <p><strong>sitemap : </strong>index, index_sub, index_sub2</p>
+
+
+                                    <br>
+                                    <ul class="slide_address">
+                                        <li><strong>address > </strong></li>
+                                        <li><a href="Project01_Css/index.html" target="_blank">Main</a></li>
+                                        <li><a href="Project01_Css/index_sub.html" target="_blank">Sub01</a></li>
+                                        <li><a href="Project01_Css/index_sub2.html" target="_blank">Sub02</a></li>
+                                    </ul>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <span class="browser sp_first">
+                                        <a href="#none">
+                                            <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                        </a>
+                                    </span>
+
+                                    <span class="browser">
+                                        <a href="#none">
+                                            <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                        </a>
+                                    </span>
+
+                                    <span class="browser">
+                                        <a href="#none">
+                                            <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                        </a>
+                                    </span>
+
+                                    <span class="browser">
+                                        <a href="#none">
+                                            <abbr title="Explorer"><img src="./img/explorer.png" alt="explorer"></abbr>
+                                        </a>
+                                    </span>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                        
+                        <div class="swiper-pagination swiper-pagination1"></div>
+
+                        
+                        <div class="swiper-button-next next1"></div>
+                        <div class="swiper-button-prev prev1"></div>
+
+                    </div>
+
+
+                </div>
+            </div> -->
 
             <div id="sectionWrap04" class="scroll_menu">
+                <div id="section04Box" class="secTitle">
+                    <h2 class="sec_tit">
+                        <span>P</span>
+                        <span>r</span>
+                        <span>o</span>
+                        <span>j</span>
+                        <span>e</span>
+                        <span>c</span>
+                        <span>t</span>
+                    </h2>
+                    <div class="swiper-container swiper2">
+                        <div class="swiper-wrapper">
 
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="css_img">
+                                        <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                    width="600" height="476" alt="apple_DeskTop"></a></div>
+                                        <div class="css_page">
+                                            <a href="./Project02_JQuery/index.html" target="_blank">
+                                                <img src="./img/pyeong-taek-uni.jpg" width="560" alt="pyeong-taek-uni">
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>PYEONGTAEK UNIVERSITY</h2>
+                                        <br>
+                                        <p><em>Apr. 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;약 3주</p>
+                                        <br>
+                                        <p>제이쿼리를 처음으로 접하고 스크립트를 사용하여 구현한 첫 페이지입니다.<br>
+                                            기존 홈페이지에서 안정감과 신뢰감을 주기위해 노력했습니다.
+                                            <br>CSS로 적용하는 것보다 간단한 방법으로 적용되는 것을 보고 <br>
+                                            매우 신기하고 재미있었지만, 앞으로 접할 일이 많을 것 같아 더욱 긴장하고 배웠습니다.</p>
+                                        <br>
+                                        <p><strong>client : </strong>평택대학교 PYEONGTAEK UNIVERSITY, development</p>
+                                        <p><strong>concept : </strong>평택대학교, <br> 미래수요 맞춤형 i+(아이플러스) 인재양성
+                                            지역사회와 세계를 변화시키는 기독교 대학</p>
+                                        <p><strong>sitemap : </strong>index, index_sub01, index_sub02, index_sub03,
+                                            login, membership</p>
+
+
+                                        <br>
+                                        <p><strong>address > </strong></p>
+                                        <br>
+                                        <ul class="slide_address">
+                                            <li><a href="Project02_JQuery/index.html" target="_blank">Main</a></li>
+                                            <li><a href="Project02_JQuery/index_sub01.html" target="_blank">Sub01</a>
+                                            </li>
+                                            <li><a href="Project02_JQuery/index_sub02.html" target="_blank">Sub02</a>
+                                            </li>
+                                            <li><a href="Project02_JQuery/index_sub03.html" target="_blank">Sub03</a>
+                                            </li>
+                                            <li><a href="Project02_JQuery/login.html" target="_blank">Sub04</a></li>
+                                            <li><a href="Project02_JQuery/membership.html" target="_blank">Sub05</a>
+                                            </li>
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Explorer"><img src="./img/explorer.png"
+                                                        alt="explorer"></abbr>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="css_img">
+                                        <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                    width="600" height="476" alt=""></a></div>
+                                        <div class="css_page">
+                                            <a href="http://gwhyeon.dothome.co.kr/" target="_blank">
+                                                <!-- 너비560px -->
+                                                <img src="./img/seoul_Fc.jpg" width="560" alt="seoul_Fc">
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>FC 서울 / php</h2>
+                                        <br>
+                                        <p><em>Jun. 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;4 Days</p>
+                                        <br>
+                                        <p>Php를 배우고 난 후 사용하여 만들어본 페이지입니다.<br>
+                                            로그인페이지와 회원가입페이지, 로그인 후 나타나는 마이페이지까지 구현하였습니다. <br>
+                                            적용하는데까지 큰 어려움이 있었지만, <br>
+                                            구현하는 과정에서 큰 재미를 느낀 것 같습니다.
+                                        </p>
+                                        <br>
+                                        <p><strong>client : </strong>FC서울 FC SEOUL, development</p>
+                                        <p><strong>concept : </strong>FC서울, Sports Football Club Seoul</p>
+                                        <p><strong>sitemap : </strong>index, join, login, membership, notice</p>
+
+
+                                        <br>
+                                        <p><strong>address > </strong></p>
+                                        <br>
+                                        <ul class="slide_address">
+                                            <li><a href="http://gwhyeon.dothome.co.kr/" target="_blank">Main</a></li>
+                                            <li><a href="http://gwhyeon.dothome.co.kr/member_form.php"
+                                                    target="_blank">join</a></li>
+                                            <li><a href="http://gwhyeon.dothome.co.kr/login_form.php"
+                                                    target="_blank">login</a></li>
+                                            <li><a href="http://gwhyeon.dothome.co.kr/member_modify_form.php"
+                                                    target="_blank">membership</a></li>
+                                            <li><a href="http://gwhyeon.dothome.co.kr/board_list.php"
+                                                    target="_blank">notice</a></li>
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Explorer"><img src="./img/explorer.png"
+                                                        alt="explorer"></abbr>
+                                            </a>
+                                        </span>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="css_img">
+                                        <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                    width="600" height="476" alt=""></a></div>
+                                        <div class="css_page">
+                                            <a href="./Project02_JQuery2/index.html" target="_blank">
+                                                <!-- 너비560px -->
+                                                <img src="./img/CGV.jpg" width="560" alt="CGV">
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>CGV</h2>
+                                        <br>
+                                        <p><em>Jun. 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;5 Days</p>
+                                        <br>
+                                        <p>제이쿼리를 배우고난 후 구현한 두 번째 사이트 입니다.<br>
+                                            제가 부족한 점을 채우기 위하여 작업한 사이트이다 보니 <br>
+                                            적용하는 것에 어려움이 조금 있었습니다. <br>
+                                            하지만 프로젝트를 진행함에 따라 보다 빠르게 진행되었고, <br>
+                                            실력을 향상하는데 큰 도움이 되었습니다.
+                                        </p>
+                                        <br>
+                                        <p><strong>client : </strong>씨지브이 CGV, brand official ,development</p>
+                                        <p><strong>concept : </strong>CGV, Open and Friendly CGV, Sparks of Change and
+                                            Vitality, Warm and Vital Color</p>
+                                        <p><strong>sitemap : </strong>index, Sub01, Sub02, Sub03</p>
+
+
+                                        <br>
+                                        <p><strong>address > </strong></p>
+                                        <br>
+                                        <ul class="slide_address">
+                                            <li><a href="./Project02_JQuery2/index.html" target="_blank">Main</a></li>
+                                            <li><a href="./Project02_JQuery2/sub01.html" target="_blank">Sub01</a></li>
+                                            <li><a href="./Project02_JQuery2/sub02.html" target="_blank">Sub02</a></li>
+                                            <li><a href="./Project02_JQuery2/sub03.html" target="_blank">Sub03</a></li>
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Explorer"><img src="./img/explorer.png"
+                                                        alt="explorer"></abbr>
+                                            </a>
+                                        </span>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-pagination2"></div>
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next next1"></div>
+                        <div class="swiper-button-prev prev1"></div>
+
+                    </div>
+
+
+                </div>
             </div>
 
             <div id="sectionWrap05" class="scroll_menu">
+                <div id="section05Box" class="chart1 secTitle">
+                    <h2 class="sec_tit">
+                        <span>반</span>
+                        <span>응</span>
+                        <span>형</span>
+                        <!-- <span>p</span>
+                        <span>o</span>
+                        <span>n</span>
+                        <span>s</span>
+                        <span>i</span>
+                        <span>v</span>
+                        <span>e</span> -->
+                    </h2>
+                    <div class="swiper-container swiper3">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="img_box">
+                                        <div class="css_img">
+                                            <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                        width="600" height="476" alt=""></a></div>
+                                            <div class="css_page">
+                                                <a href="./Project03_Responsive2/index.html" target="_blank">
+                                                    <img src="./img/emart24_mainPage.jpg" width="560" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="Tablet_img">
+                                            <div class="Tablet">
+                                                <a href="#none"><img src="./img/Tablet.png" width="250" alt=""></a>
+                                            </div>
+                                            <div class="Tablet_page">
+                                                <a href="javascript:void(window.open('Project03_Responsive2/index.html', '_blank', 'width=680 , height=846', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                    tabindex="1">
+                                                    <img src="./img/emart24_tabletPage.jpg" width="237" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="mobile_img">
+                                            <div class="mobile">
+                                                <a href="#none"><img src="./img/mobile.png" width="150" alt=""></a>
+                                            </div>
+                                            <div class="mobile_page">
+                                                <a href="javascript:void(window.open('Project03_Responsive2/index.html', '_blank', 'width=360 , height=846', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                    tabindex="1">
+                                                    <img src="./img/emart24_mobilePage.jpg" width="134" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
 
+                                    <div class="slide_aside">
+                                        <h2>Emart 24</h2>
+                                        <br>
+                                        <p><em>Aug 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;7 Days</p>
+                                        <br>
+                                        <p> 반응형 페이지를 연습하기 위해 만든 두 번째 사이트입니다.<br>
+                                            연습을 목적으로 기존 사이트를 클론코딩 하였으며, 만들면서 부족한 레이아웃은 <br>
+                                            타 경쟁 사이트를 참고해 만들었습니다. <br>
+                                            반응형에 대해 더 잘 이해할 수 있게 되었습니다.
+                                        <br>
+                                        <br>
+                                        <p><strong>client : </strong>이마트24 Emart 24, brand official, development</p>
+                                        <p><strong>concept : </strong>경영을 통해 기업의 사회적 책임을 수행하고자 하는 Emart 24</p>
+                                        <p><strong>sitemap : </strong>index</p>
+
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <ul class="slide_address">
+                                            <li><strong>address > </strong></li>
+                                            <li><a href="Project03_Responsive2/index.html" target="_blank">Main</a></li>
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                       
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="img_box">
+                                        <div class="css_img">
+                                            <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                        width="600" height="476" alt=""></a></div>
+                                            <div class="css_page">
+                                                <a href="./Project03_Responsive/index.html" target="_blank">
+                                                    <img src="./img/Audi.jpg" width="560" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="Tablet_img">
+                                            <div class="Tablet">
+                                                <a href="#none"><img src="./img/Tablet.png" width="250" alt=""></a>
+                                            </div>
+                                            <div class="Tablet_page">
+                                                <a href="javascript:void(window.open('Project03_Responsive/index.html', '_blank', 'width=680 , height=846', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                    tabindex="1"><img src="./img/Tablet_page.png" width="237"
+                                                        alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="mobile_img">
+                                            <div class="mobile">
+                                                <a href="#none"><img src="./img/mobile.png" width="150" alt=""></a>
+                                            </div>
+                                            <div class="mobile_page">
+                                                <a href="javascript:void(window.open('Project03_Responsive/index.html', '_blank', 'width=360 , height=846', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                    tabindex="1"><img src="./img/mobile_page.png" width="134"
+                                                        alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="slide_aside">
+                                        <h2>Audi</h2>
+                                        <br>
+                                        <p><em>Mar 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;17 Days</p>
+                                        <br>
+                                        <p> 반응형 페이지를 연습하기 위해 작업한 사이트입니다.<br>
+                                            달라지는 레이아웃의 쉽게 접근하기 위해 %단위를 사용하였습니다. <br>
+                                            첫 작업이다 보니 각 기기 해상도에 맞도록 레이아웃을 어떻게 배치할지 많은 고민을 했지만, <br>
+                                            구분점을 세세히 좁힐 수록 눈이 편안해지는 것을 느꼈고 <br>
+                                            페이지 제작법을 제대로 익히는 데 좋은 기회가 되었습니다.</p>
+                                        <br>
+                                        <p><strong>client : </strong>아우디 Audi, brand official, development</p>
+                                        <p><strong>concept : </strong>독일 AUDI AG의 한국내 판매법인으로 설립된 Audi Korea</p>
+                                        <p><strong>sitemap : </strong>index</p>
+                                        <p class="open_figma">
+                                            <a href="https://www.figma.com/file/1YvYTKdFUZbmkaekZ77sAF/Untitled?type=design&node-id=0%3A1&mode=design&t=Ru1yDCmTrXO6Z76O-1"
+                                                target="_blank">피그마 열기</a></p>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <ul class="slide_address">
+                                            <li><strong>address > </strong></li>
+                                            <li><a href="Project03_Responsive/index.html" target="_blank">Main</a></li>
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Explorer"><img src="./img/explorer.png"
+                                                        alt="explorer"></abbr>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            
+
+                            <!-- <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="img_box">
+                                        <div class="css_img">
+                                            <div class="apple_DeskTop"><a href="#none"><img src="img/apple_DeskTop.png"
+                                                        width="600" height="476" alt=""></a></div>
+                                            <div class="css_page">
+                                               너비 560 
+                                            </div>
+                                        </div>
+                                        <div class="Tablet_img">
+                                            <div class="Tablet">
+                                                <a href="#none"><img src="./img/Tablet.png" width="250" alt=""></a>
+                                            </div>
+                                            <div class="Tablet_page">
+                                              너비 237 
+                                            </div>
+                                        </div>
+                                        <div class="mobile_img">
+                                            <div class="mobile">
+                                                <a href="#none"><img src="./img/mobile.png" width="150" alt=""></a>
+                                            </div>
+                                            <div class="mobile_page">
+                                                너비 134 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>더큰게 올거야~~~~~~</h2>
+
+                                    </div>
+                                </div>
+
+
+                            </div> -->
+
+                        </div>
+
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-pagination3"></div>
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next next1"></div>
+                        <div class="swiper-button-prev prev1"></div>
+
+                    </div>
+                </div>
             </div>
 
             <div id="sectionWrap06" class="scroll_menu">
+                <div id="section06Box" class="secTitle">
+                    <h2 class="sec_tit">
+                        <span>M</span>
+                        <span>o</span>
+                        <span>b</span>
+                        <span>i</span>
+                        <span>l</span>
+                        <span>e</span>
+                    </h2>
 
+                    <div class="swiper-container swiper4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="img_box">
+                                        <ul class="prevBox2">
+                                            <li class="prev2"><a href="#none"><i
+                                                        class="fa-solid fa-circle-chevron-left"></i></a></li>
+                                        </ul>
+                                        <div class="mobile_banner">
+                                            <div class="mobile_img">
+                                                <div class="mobile">
+                                                    <a href="#none"><img src="./img/mobile2.png" width="300"
+                                                            alt="mobile2"></a>
+                                                </div>
+                                                <div class="mobile_page mobile1">
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/Splash.png" width="249" alt="Splash">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/loginPage.png" width="249"
+                                                            alt="loginPage">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/mainPage.png" width="249" alt="mainPage">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/Sub01.png" width="249" alt="Sub01">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/Sub02.png" width="249" alt="Sub02">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/login_please.png" width="249"
+                                                            alt="login_please">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/notice.png" width="249" alt="notice">
+                                                    </a>
+
+                                                    <a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                        tabindex="1">
+                                                        <img src="./img/react/notice2.png" width="249" alt="notice2">
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <!-- <div class="mobile_img2">
+                                                <div class="mobile">
+                                                    <a href="#none"><img src="./img/mobile2.png" width="300" alt=""></a>
+                                                </div>
+                                                <div class="mobile_page">
+                                                    
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                        <ul class="nextBox2">
+                                            <li class="next2"><a href="#none"><i
+                                                        class="fa-solid fa-circle-chevron-right"></i></a></li>
+                                        </ul>
+
+                                        <ul class="downloadBox">
+                                            <li><a href="./ppt/pigPark.pdf" target="_blank">기획안 열기</a></li>
+                                        </ul>
+
+                                    </div>
+
+
+                                    <div class="slide_aside">
+                                        <h2>주차돼지 (App)</h2>
+                                        <br>
+                                        <p><em>Jun. 2023</em></p>
+                                        <p><strong>duration :</strong>&nbsp;&nbsp;&nbsp;11days</p>
+                                        <br>
+                                        <p>팀 프로젝트 입니다.</p>
+                                        <p>앱 화면을 구현할 때 전반적인 개발 위주로 참여 하였습니다.</p>
+                                        <br>
+                                        <p><strong>참여율 : </strong> <br>
+                                            디자인 : 70% &nbsp;&nbsp; 기획 : 70% &nbsp;&nbsp; 개발 : 85%
+                                        </p>
+                                        <br>
+                                        <p>React, Node.js를 사용하여 만든 어플입니다.<br>
+                                            실제 어플이 아닌 모바일 웹 화면을 기준으로 만들기 시작하였습니다. <br>
+                                            App을 사용하는 사용자를 기준으로, 누구나 쉽게 이용할 수 있고<br>
+                                            다양한 기능을 넣음으로 써, 편의성을 느낄 수 있게 제작하였습니다.<br>
+                                            React 기능을 간단하게 사용함으로 써 모바일 앱을 쉽게 구현하는 것이 매우 인상 깊었습니다.
+                                        </p>
+
+                                        <br>
+                                        <ul class="slide_address fl">
+                                            <li><strong>address > </strong></li>
+                                            <li><a href="javascript:void(window.open('https://gwanghyeon0.github.io/Project04_React', '_blank', 'width=450 , height=746', 'scrollbars=yes', 'resizable=no', 'toolbar=no'))"
+                                                    tabindex="1">Main</a></li>
+                                            <!-- <li><a href="Project03_Responsive/index.html">Main</a></li> -->
+                                        </ul>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <span class="browser sp_first">
+                                            <a href="#none">
+                                                <abbr title="Chrom"><img src="./img/chrom.png" alt="chrom"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Firefox"><img src="./img/firefox.png" alt="firefox"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Edge"><img src="./img/edge.png" alt="edge"></abbr>
+                                            </a>
+                                        </span>
+
+                                        <span class="browser">
+                                            <a href="#none">
+                                                <abbr title="Explorer"><img src="./img/explorer.png"
+                                                        alt="explorer"></abbr>
+                                            </a>
+                                        </span>
+
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <div class="swiper-slide swiper-slideBox">
+                                <div class="slideBox">
+                                    <div class="img_box">
+                                        <ul class="prevBox2">
+                                            <li class="prev2"><a href="#none"><i
+                                                        class="fa-solid fa-circle-chevron-left"></i></a></li>
+                                        </ul>
+                                        <div class="mobile_banner2">
+                                            <div class="mobile_img">
+                                                <div class="mobile">
+                                                    <a href="#none"><img src="./img/mobile2.png" width="300" alt=""></a>
+                                                </div>
+                                                <div class="mobile_page mobile2">
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/Splash.png" width="249" alt="Splash">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/loginPage.png" width="249"
+                                                            alt="loginPage">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/mainPage.png" width="249" alt="mainPage">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/Sub01.png" width="249" alt="Sub01">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/Sub02.png" width="249" alt="Sub02">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/login_please.png" width="249"
+                                                            alt="login_please">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/notice.png" width="249" alt="notice">
+                                                    </a>
+
+                                                    <a href="#none">
+                                                        <img src="./img/react/notice2.png" width="249" alt="notice2">
+                                                    </a>
+
+                                                </div>
+                                            </div>
+                                            <div class="mobile_img2">
+                                                <div class="mobile">
+                                                    <a href="#none"><img src="./img/mobile2.png" width="300" alt=""></a>
+                                                </div>
+                                                <div class="mobile_page">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="nextBox2">
+                                            <li class="next2"><a href="#none"><i
+                                                        class="fa-solid fa-circle-chevron-right"></i></a></li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="slide_aside">
+                                        <h2>준비중입니다 !</h2>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination swiper-pagination4"></div>
+
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next next1"></div>
+                        <div class="swiper-button-prev prev1"></div>
+
+                    </div>
+                </div>
             </div>
 
             <div id="sectionWrap07" class="scroll_menu">
+                <div id="section07Box">
+                    <h2 class="thank_you">Thank you for looking at my portfolio.</h2>
 
+                    <div class="card_box">
+                        <div class="card1 front">
+                            <img src="./img/Logo.png" width="120" alt="Logo">
+                            <br>
+                            <br>
+                            <p class="pb">채용하시겠습니까 ?</p>
+                            <br>
+                            <p class="button">Ok</p>
+
+                        </div>
+
+                        <div class="card2 back">
+                            <div class="nameBox">
+                                <img src="./img/Logo.png" width="110" alt="">
+                                <p>복광현</p>
+                            </div>
+                            <p class="pb"><i class="fa-solid fa-phone"></i> CellPhone</p>
+                            <a href="tel:01047872947">010-4787-2947</a>
+                            <br>
+                            <br>
+
+                            <p class="pb"><i class="fa-solid fa-envelope"></i> E-mail</p>
+                            <a href='mailto:bggh01@naver.com'>bggh01@naver.com</a>
+                            <br>
+                            <br>
+
+                            <p class="pb"><i class="fa-regular fa-comment"></i> KaKaoTalk</p>
+                            <p>gwhyeon01</p>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="time">
+                        <p>
+                            <!-- 시계 -->
+                            <i class="far fa-envelope"></i> <span>00</span> : <span>00</span> : <span>00</span>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -306,15 +1359,68 @@
             <li id="btn01" class="active"><span class="txt txt2">Main</span></li>
             <li id="btn02"><span class="txt txt2">HOME</span></li>
             <li id="btn03"><span class="txt txt2">Profile</span></li>
-            <li id="btn04"><span class="txt txt2">HTML/Css</span></li>
-            <li id="btn05"><span class="txt txt2">JQuery</span></li>
+            <!-- <li id="btn04"><span class="txt txt2">HTML/Css</span></li> -->
+            <li id="btn05"><span class="txt txt2">Project</span></li>
             <li id="btn06"><span class="txt txt2">Responsive</span></li>
             <li id="btn07"><span class="txt txt2">Mobile</span></li>
             <li id="btn08"><span class="txt txt2">Contact</span></li>
         </ul>
     </div>
 
+    <!-- Swiper 동작 -->
+    <script>
+        var swiper1 = new Swiper('.swiper1', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination1',
+                clickable: true,
+            },
+            navigation: { // 네비게이션
+                nextEl: '.next1', // 다음 버튼 클래스명
+                prevEl: '.prev1', // 이전 버튼 클래스명
+            },
+        });
 
+        var swiper2 = new Swiper('.swiper2', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination2',
+                clickable: true,
+            },
+            navigation: { // 네비게이션
+                nextEl: '.next1', // 다음 버튼 클래스명
+                prevEl: '.prev1', // 이전 버튼 클래스명
+            },
+           
+        });
+
+        var swiper3 = new Swiper('.swiper3', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination3',
+                clickable: true,
+            },
+            navigation: { // 네비게이션
+                nextEl: '.next1', // 다음 버튼 클래스명
+                prevEl: '.prev1', // 이전 버튼 클래스명
+            },
+           
+        });
+
+        var swiper4 = new Swiper('.swiper4', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.swiper-pagination4',
+                clickable: true,
+            },
+            navigation: { // 네비게이션
+                nextEl: '.next1', // 다음 버튼 클래스명
+                prevEl: '.prev1', // 이전 버튼 클래스명
+            },
+           
+        });
+
+    </script>
 
 </body>
 
